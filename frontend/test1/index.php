@@ -13,7 +13,7 @@
         $page = (int)$_GET["page"];
         $startrow = ($page - 1) * $pagesize;
     }
-
+    mysqli_query($con, "set character set 'utf8'");
     $sql = "SELECT * FROM comment";
     $result = mysqli_query($con, $sql); // 总记录数和总页数
     $records = mysqli_num_rows($result); // 总记录数
